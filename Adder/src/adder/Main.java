@@ -7,7 +7,12 @@ public class Main {
             int result = addArguments(args);
             System.out.println(result);
         } catch (Exception e) {
-            System.err.println("Please provide some integers to add");
+            if(args.length < 2){
+                System.err.println("Please provide enough integers to add");
+            }
+            if(!args[0].isDigit() && !args[0].equals("-")) {
+                System.err.println("Please provide valid input");
+            }
         }
     }
 
