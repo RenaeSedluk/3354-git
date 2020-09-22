@@ -18,8 +18,16 @@ public class Main {
 
     private static int addArguments(String[] args) {
         int sum = 0;
-        for(int i = 0; i < args.length(); i++){
+        if (args[0].equals("-")){
+            for(int i = 1; i < args.length(); i++){
             sum = sum + Integer.valueOf(args[i]);
+            }
+            sum = (sum * -1) ;
+        }
+        else {
+            for(int i = 0; i < args.length(); i++){
+            sum = sum + Integer.valueOf(args[i]);
+            }
         }
         return sum;
     }
